@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Withdraw() {
   return (
-    <section className="bg-zinc-800 text-white pt-20">
+    <section className="bg-zinc-800 text-zinc-200 pt-20">
       <div className="flex">
         <div className="w-1/5 px-10 py-5 bg-zinc-700 h-screen">
           <h1 className="text-xl font-bold mb-4">Demo User</h1>
