@@ -78,10 +78,11 @@ const Header = () => {
         </ul>
         <div className="flex items-center space-x-4">
           <div className="bg-black px-2 py-2 rounded-full">
-            <span className="text-yellow-500 font-bold">DP</span>
+            <span className="text-yellow-500 font-bold">DU</span>
           </div>
-          <div className="text-black">Daan Pretorius</div>
-          <div className="text-black">R0.00</div>
+          <div className="text-black">Demo User</div>
+          <div className="text-black">0827760381</div>
+          <div className="text-black">R100000.00</div>
         </div>
       </nav>
     </header>
