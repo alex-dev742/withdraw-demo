@@ -82,7 +82,7 @@ const Header = () => {
           </div>
           <div className="text-black">Demo User</div>
           <div className="text-black">0827760381</div>
-          <div className="text-black">R100000.00</div>
+          <div className="text-black">R10000.00</div>
         </div>
       </nav>
     </header>

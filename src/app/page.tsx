@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <section className="bg-zinc-800 text-white min-h-screen pt-20">
+    <section className="bg-zinc-800 text-white min-h-screen flex items-center justify-center">
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h1 className="text-4xl mb-2 font-bold text-yellow-400">
@@ -18,7 +18,7 @@ export default function Home() {
               </button>
             </Link>
             <Link href="/deposit">
-              <button className="bg-white text-black px-6 py-3 rounded-lg font-bold hover:bg-gray-200">
+              <button className="border border-zinc-400 text-white px-6 py-3 rounded-lg font-normal hover:bg-zinc-700">
                 Deposit
               </button>
             </Link>
