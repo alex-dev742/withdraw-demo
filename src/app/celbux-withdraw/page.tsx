@@ -6,19 +6,26 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function CelbuxWithdraw() {
   const [amount, setAmount] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("0827760381");
 
   const handleWithdraw = () => {
-    if (!amount) {
-      toast.info("Please enter an amount", {});
+    if (!amount || !phoneNumber) {
+      toast.info("Please enter both amount and phone number", {});
     } else {
-      // Check if the amount is valid (e.g., greater than 0)
       const parsedAmount = parseFloat(amount);
-      if (parsedAmount > 0) {
+      const phoneRegex = /^0\d{9}$/; // Regex for South African phone numbers
+
+      if (parsedAmount > 0 && phoneRegex.test(phoneNumber)) {
         toast.success(
-          `R${amount} has been withdrawn. Please check your phone for an SMS confirmation.`,
+          `R${amount} has been withdrawn. An SMS confirmation will be sent to ${phoneNumber}.`,
           {}
         );
         setAmount(""); // Reset the amount input field
+      } else if (!phoneRegex.test(phoneNumber)) {
+        toast.error(
+          "Invalid phone number. Please enter a valid 10-digit South African number starting with 0.",
+          {}
+        );
       } else {
         toast.error(
           "Invalid amount. Please enter a valid amount greater than 0.",
@@ -74,7 +81,8 @@ export default function CelbuxWithdraw() {
             <input
               id="phone"
               type="text"
-              value="0827760381"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
               className="w-1/2 px-4 py-2 bg-zinc-700 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
           </div>
